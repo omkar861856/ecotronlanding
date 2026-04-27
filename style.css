@@ -64,9 +64,12 @@ body {
 }
 
 .logo-img {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     object-fit: contain;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    background: #000; /* Matching the logo's black background */
 }
 
 .nav-links {

@@ -28,7 +28,7 @@ services:
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
 
       # 🔌 internal app port
-      - "traefik.http.services.ecotron.loadbalancer.server.port=3000"
+      - "traefik.http.services.ecotron.loadbalancer.server.port=80"
 
 networks:
   traefik:

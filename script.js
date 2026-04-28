@@ -23,25 +23,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Adblocker detection
-async function checkAdBlocker() {
-    let isBlocked = false;
-    try {
-        const response = await fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
-            method: 'HEAD',
-            mode: 'no-cors'
-        });
-        isBlocked = false;
-    } catch (error) {
-        isBlocked = true;
-    }
+function detectAdBlocker() {
+    const adTest = document.createElement('div');
+    adTest.innerHTML = '&nbsp;';
+    adTest.className = 'adsbox ad-placement doubleclick ad-placeholder ad-badge';
+    adTest.style.position = 'absolute';
+    adTest.style.top = '-1000px';
+    document.body.appendChild(adTest);
 
-    if (isBlocked) {
-        const adblockBanner = document.getElementById('adblock-banner');
-        if (adblockBanner) {
-            adblockBanner.style.display = 'block';
+    setTimeout(() => {
+        const isBlocked = adTest.offsetHeight === 0 || window.getComputedStyle(adTest).display === 'none';
+        adTest.remove();
+
+        if (isBlocked) {
+            const adblockBanner = document.getElementById('adblock-banner');
+            if (adblockBanner) {
+                adblockBanner.style.display = 'block';
+            }
+            // Prompt the user as requested
+            alert("We noticed you are using an AdBlocker. Please consider disabling it to support Ecotron. Our tools are free to use and ads help us cover server costs!");
         }
-    }
+    }, 500);
 }
 
-// Check after a slight delay to ensure scripts had time to load/be blocked
-setTimeout(checkAdBlocker, 1500);
+window.addEventListener('load', detectAdBlocker);

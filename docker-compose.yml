@@ -1,0 +1,35 @@
+version: "3.9"
+
+services:
+  app:
+    build: .
+    container_name: ecotronlanding
+    restart: always
+
+    networks:
+      - traefik
+
+    labels:
+      - "traefik.enable=true"
+
+      # 🌐 PRIMARY DOMAIN
+      - "traefik.http.routers.ecotron.rule=Host(`ecotron.co.in`) || Host(`www.ecotron.co.in`)"
+      
+      # 🔐 HTTPS entry
+      - "traefik.http.routers.ecotron.entrypoints=websecure"
+      - "traefik.http.routers.ecotron.tls.certresolver=myresolver"
+
+      # 🔁 HTTP → HTTPS redirect
+      - "traefik.http.routers.ecotron-http.rule=Host(`ecotron.co.in`) || Host(`www.ecotron.co.in`)"
+      - "traefik.http.routers.ecotron-http.entrypoints=web"
+      - "traefik.http.routers.ecotron-http.middlewares=redirect-to-https"
+
+      # 🔁 middleware definition
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+
+      # 🔌 internal app port
+      - "traefik.http.services.ecotron.loadbalancer.server.port=3000"
+
+networks:
+  traefik:
+    external: true

@@ -29,6 +29,7 @@ services:
 
       # 🔌 internal app port
       - "traefik.http.services.ecotron.loadbalancer.server.port=80"
+      - "traefik.docker.network=traefik"
 
 networks:
   traefik:

@@ -21,3 +21,27 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// Adblocker detection
+async function checkAdBlocker() {
+    let isBlocked = false;
+    try {
+        const response = await fetch('https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js', {
+            method: 'HEAD',
+            mode: 'no-cors'
+        });
+        isBlocked = false;
+    } catch (error) {
+        isBlocked = true;
+    }
+
+    if (isBlocked) {
+        const adblockBanner = document.getElementById('adblock-banner');
+        if (adblockBanner) {
+            adblockBanner.style.display = 'block';
+        }
+    }
+}
+
+// Check after a slight delay to ensure scripts had time to load/be blocked
+setTimeout(checkAdBlocker, 1500);

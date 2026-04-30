@@ -32,7 +32,7 @@
 
     <main>
         <!-- Adblock Disclaimer Banner -->
-        <div id="adblock-banner" class="adblock-banner" style="display: none; background-color: #fef2f2; border-left: 4px solid var(--primary, #10b981); margin: 20px auto; padding: 16px 24px; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); text-align: center; color: #111827; font-weight: 500;">
+        <div id="adblock-banner" class="adblock-banner" style="display: none; background: rgba(16, 185, 129, 0.1); border: 1px solid var(--primary); margin: 20px auto; padding: 16px 24px; max-width: 800px; border-radius: 12px; backdrop-filter: blur(8px); text-align: center; color: var(--text-main); font-weight: 500;">
             <span style="font-size: 1.2rem; margin-right: 8px;">❤️</span> <strong>Support Us:</strong> Kindly consider switching off your ad blocker. The ads displayed help us cover server costs and keep Ecotron free for everyone.
         </div>
         <section class="hero">
@@ -54,41 +54,66 @@
                 
                 <div class="services-grid">
                     <div class="service-card">
-                        <div class="service-icon"><i class="ph ph-wrench"></i></div>
-                        <h3>Micro Utility Tools</h3>
-                        <p>Fast, lightweight tools for daily tasks and file management.</p>
+                        <div class="service-icon"><i class="ph ph-timer"></i></div>
+                        <h3>Ecotron Time</h3>
+                        <p>A premium, precise timekeeping suite featuring a global clock, customizable alarms, a versatile timer, and a lap-based stopwatch.</p>
+                        <a href="https://time.ecotron.co.in" target="_blank" class="service-link">Launch Time <i class="ph ph-arrow-square-out"></i></a>
                     </div>
 
                     <div class="service-card">
-                        <div class="service-icon"><i class="ph ph-magnifying-glass-plus"></i></div>
-                        <h3>“Search Hack” Pages</h3>
-                        <p>Specialized SEO pages that capture search intent effectively.</p>
+                        <div class="service-icon"><i class="ph ph-moon-stars"></i></div>
+                        <h3>Ecotron Sleep</h3>
+                        <p>Optimize your rest using 90-minute sleep cycle calculations. Find the perfect time to go to bed or wake up refreshed.</p>
+                        <a href="https://sleep.ecotron.co.in" target="_blank" class="service-link">Launch Sleep <i class="ph ph-arrow-square-out"></i></a>
                     </div>
 
                     <div class="service-card">
-                        <div class="service-icon"><i class="ph ph-cpu"></i></div>
-                        <h3>AI Wrappers</h3>
-                        <p>Simple interfaces for niche AI-powered use cases.</p>
+                        <div class="service-icon"><i class="ph ph-image-square"></i></div>
+                        <h3>Ecotron Opti</h3>
+                        <p>High-performance, browser-based image optimization. Compress JPEG images instantly without losing quality or uploading data to a server.</p>
+                        <a href="https://opti.ecotron.co.in" target="_blank" class="service-link">Launch Opti <i class="ph ph-arrow-square-out"></i></a>
                     </div>
 
                     <div class="service-card">
-                        <div class="service-icon"><i class="ph ph-download-simple"></i></div>
+                        <div class="service-icon"><i class="ph ph-shield-checkered"></i></div>
+                        <h3>Ecotron Whisper</h3>
+                        <p>Share sensitive information securely. Create encrypted notes that self-destruct immediately after being read. No data is stored permanently.</p>
+                        <a href="https://whisper.ecotron.co.in" target="_blank" class="service-link">Launch Whisper <i class="ph ph-arrow-square-out"></i></a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="ph ph-spinner-gap"></i></div>
+                        <h3>Ecotron Spin</h3>
+                        <p>An interactive, premium picker wheel for giveaways, decision-making, or games. Enter your choices and let fate decide in style.</p>
+                        <a href="https://spin.ecotron.co.in" target="_blank" class="service-link">Launch Spin <i class="ph ph-arrow-square-out"></i></a>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon"><i class="ph ph-sparkle"></i></div>
+                        <h3>Ecotron Lexi</h3>
+                        <p>A creative random word generator designed for writers, gamers, and brainstormers. Spark inspiration with a single click.</p>
+                        <a href="https://lexi.ecotron.co.in" target="_blank" class="service-link">Launch Lexi <i class="ph ph-arrow-square-out"></i></a>
+                    </div>
+
+                    <!-- Other Services -->
+                    <div class="service-card">
+                        <div class="service-icon"><i class="ph ph-video-camera"></i></div>
                         <h3>MeTube Downloader</h3>
                         <p>Download video, audio, captions, and thumbnails directly from our specialized platform.</p>
                         <a href="https://metube.ecotron.co.in/" target="_blank" class="service-link">Launch MeTube <i class="ph ph-arrow-square-out"></i></a>
                     </div>
 
                     <div class="service-card">
-                        <div class="service-icon"><i class="ph ph-browser"></i></div>
+                        <div class="service-icon"><i class="ph ph-spider"></i></div>
                         <h3>Crawl4AI</h3>
                         <p>High-performance website crawler designed for AI-ready data extraction and LLM integration.</p>
                         <a href="https://crawl4ai.ecotron.co.in/" target="_blank" class="service-link">Launch Crawl4AI <i class="ph ph-arrow-square-out"></i></a>
                     </div>
 
                     <div class="service-card">
-                        <div class="service-icon"><i class="ph ph-shield-check"></i></div>
+                        <div class="service-icon"><i class="ph ph-shield-warning"></i></div>
                         <h3>Pornlocator</h3>
-                        <p>Domain Intelligence: Verify if a domain is flagged within our global adult content blocklist of 770,000+ records.</p>
+                        <p>Domain Intelligence: Verify if a domain is flagged within our global adult content blocklist.</p>
                         <a href="https://pornlocator.ecotron.co.in/" target="_blank" class="service-link">Launch Pornlocator <i class="ph ph-arrow-square-out"></i></a>
                     </div>
 
@@ -97,18 +122,6 @@
                         <h3>Scientific Calculator</h3>
                         <p>High precision scientific calculator with full support for physical units and conversions.</p>
                         <a href="https://calculator.ecotron.co.in/" target="_blank" class="service-link">Launch Calculator <i class="ph ph-arrow-square-out"></i></a>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon"><i class="ph ph-code"></i></div>
-                        <h3>Developer Tools</h3>
-                        <p>Essential utilities for formatting and debugging code.</p>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon"><i class="ph ph-sparkle"></i></div>
-                        <h3>Viral Fun Tools</h3>
-                        <p>Engaging experiments designed to drive viral traffic.</p>
                     </div>
                 </div>
             </div>
